@@ -14,8 +14,8 @@
  * 6. stpcpy
  * 7. stpncpy
  * 8. strcat
- * 9. strchr
- * 10. strcmp          [x]
+ * 9. strchr            [x]
+ * 10. strcmp           [x]
  * 11. strcoll
  * 12. strcoll_l
  * 13. strcpy           [x]
@@ -41,6 +41,7 @@
  * 33. strxfrm_l
 */
 
+void *my_memcpy(void *dest, const void *src, size_t n);
 size_t my_strlen(const char str[]);
 char *my_strcpy(char *dst, const char *src);
 int my_strcmp(const char *s1, const char *s2);

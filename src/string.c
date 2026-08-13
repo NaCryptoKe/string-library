@@ -32,10 +32,22 @@ int my_strcmp(const char *s1, const char *s2)
 
 char *my_strchr(const char *s, int c)
 {
+    unsigned char *src = (unsigned char *)src;
     char *result = NULL;
-    for (size_t i = 0; i < my_strlen(s); i++)
+    for (size_t i = 0; i < my_strlen(src); i++)
     {
-        if (s[i] == c) result = &s[i];
+        if (src[i] == c) result = &src[i];
     }
     return result;
+}
+
+void *my_memcpy(void *dest, const void *src, size_t n)
+{
+    unsigned char *d = (unsigned char *) dest;
+    const unsigned char *s = (const unsigned char *) src;
+
+    for (size_t i = 0; i < n; i++)
+    {
+        d[i] = s[i];
+    }
 }

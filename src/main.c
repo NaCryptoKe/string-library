@@ -8,7 +8,12 @@ int main()
     char greet[] = "Hello";
     char greet2[50];
 
-    char a[] = "AAA";
-    char b = 'A';
-    printf("%c", *strchr(a, (int)b));
+    int a = 20;
+    int b = 10;
+
+    printf("Value of b before memcpy: %d\n", b);
+
+    my_memcpy(&b, &a, sizeof(int));
+
+    printf("Value of b after memcpy: %d\n", b);
 }
