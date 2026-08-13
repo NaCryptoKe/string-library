@@ -8,6 +8,7 @@ int main()
     char greet[] = "Hello";
     char greet2[50];
 
-    my_strcpy(greet2, greet);
-    printf("%s", greet2);
+    char a[] = "AAA";
+    char b[] = "A";
+    printf("%d", my_strcmp(a, b));
 }

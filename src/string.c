@@ -17,3 +17,15 @@ char *my_strcpy(char *dst, const char *src)
         dst[i] = src[i];
     }
 }
+
+int my_strcmp(const char *s1, const char *s2)
+{
+    size_t len = my_strlen(s1);
+
+    for (size_t i = 0; i < len; i++)
+    {
+        int result = s1[i] - s2[i];
+        if (result != 0) return result;
+    }
+    return 0;
+}
