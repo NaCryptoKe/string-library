@@ -1,10 +1,13 @@
 #include "../include/string.h"
 
 #include <stdio.h>
+#include <string.h>
 
 int main()
 {
     char greet[] = "Hello";
+    char greet2[50];
 
-    printf("Size of greet is %zu, it should be 5", strlen(greet));
+    my_strcpy(greet2, greet);
+    printf("%s", greet2);
 }
