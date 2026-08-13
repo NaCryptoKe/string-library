@@ -11,9 +11,7 @@ int main()
     int a = 20;
     int b = 10;
 
-    printf("Value of b before memcpy: %d\n", b);
 
-    my_memcpy(&b, &a, sizeof(int));
+    printf("%d", my_memcmp(&b, &a, 2));
 
-    printf("Value of b after memcpy: %d\n", b);
 }

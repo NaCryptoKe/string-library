@@ -6,9 +6,9 @@
 
 /*
  * string.h (the original) has the following functions
- * 1. memcpy
+ * 1. memcpy            [x]
  * 2. memchr
- * 3. memcmp
+ * 3. memcmp            [x]
  * 4. memmove
  * 5. memset
  * 6. stpcpy
@@ -42,6 +42,7 @@
 */
 
 void *my_memcpy(void *dest, const void *src, size_t n);
+int my_memcmp(const void *s1, const void *s2, size_t n);
 size_t my_strlen(const char str[]);
 char *my_strcpy(char *dst, const char *src);
 int my_strcmp(const char *s1, const char *s2);
