@@ -29,3 +29,13 @@ int my_strcmp(const char *s1, const char *s2)
     }
     return 0;
 }
+
+char *my_strchr(const char *s, int c)
+{
+    char *result = NULL;
+    for (size_t i = 0; i < my_strlen(s); i++)
+    {
+        if (s[i] == c) result = &s[i];
+    }
+    return result;
+}

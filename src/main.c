@@ -9,6 +9,6 @@ int main()
     char greet2[50];
 
     char a[] = "AAA";
-    char b[] = "A";
-    printf("%d", my_strcmp(a, b));
+    char b = 'A';
+    printf("%c", *strchr(a, (int)b));
 }
