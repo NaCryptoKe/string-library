@@ -11,8 +11,8 @@
  * 3. memcmp            [x]
  * 4. memmove           [x]
  * 5. memset
- * 6. stpcpy
- * 7. stpncpy
+ * 6. stpcpy            [x]
+ * 7. stpncpy           [x]
  * 8. strcat
  * 9. strchr            [x]
  * 10. strcmp           [x]
@@ -27,7 +27,7 @@
  * 19. strlen           [x]
  * 20. strncat
  * 21. strncmp
- * 22. strncpy
+ * 22. strncpy          [x]
  * 23. strndup
  * 24. strnlen
  * 25. strpbrk
@@ -45,9 +45,12 @@ void *my_memcpy(void *dest, const void *src, size_t n);
 void *my_memchr(const void *s, int c, size_t n);
 int my_memcmp(const void *s1, const void *s2, size_t n);
 void *my_memmove(void *dest, const void *src, size_t n);
+char *my_stpcpy(char *dest, const char *src);
+char *my_stpncpy(char *dest, const char *src, size_t n);
 char *my_strchr(const char *s, int c);
 int my_strcmp(const char *s1, const char *s2);
 char *my_strcpy(char *dst, const char *src);
 size_t my_strlen(const char *str);
+char *my_strncpy(char *dest, const char *src, size_t n);
 
 #endif  // STRING_H

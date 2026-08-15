@@ -70,6 +70,19 @@ void *my_memmove(void *dest, const void *src, size_t n)
     return dest;
 }
 
+char *my_stpcpy(char *dest, const char *src)
+{
+    my_strcpy(dest, src);
+    return dest + my_strlen(src);
+}
+
+char *my_stpncpy(char *dest, const char *src, size_t n)
+{
+    my_strncpy(dest, src, n);
+
+    return dest + n;
+}
+
 char *my_strchr(const char *s, int c)
 {
     unsigned char *src = (unsigned char *)s;
@@ -111,4 +124,23 @@ size_t my_strlen(const char *str)
     {
         if (str[i] == '\0') return i;
     }
+}
+
+char *my_strncpy(char *dest, const char *src, size_t n)
+{
+    unsigned char *d = (unsigned char *)dest; 
+    unsigned char *s = (unsigned char *)src; 
+    size_t len = my_strlen(src) >= n ? n : my_strlen(src);
+
+    for (size_t i = 0; i < len; i++)
+    {
+        d[i] = s[i];
+    }
+
+    for (len; len < n; len++)
+    {
+        d[len] = '\0';
+    }
+
+    return dest;
 }
