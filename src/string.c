@@ -1,4 +1,5 @@
 #include "../include/string.h"
+#include <stdlib.h>
 
 void *my_memcpy(void *dest, const void *src, size_t n)
 {
@@ -37,6 +38,36 @@ int my_memcmp(const void *s1, const void *s2, size_t n)
         if (str1[i] - str2[i] != 0) return str1[i] - str2[i];
     }
     return 0;
+}
+
+void *my_memmove(void *dest, const void *src, size_t n)
+{
+    if (dest == src || n == 0) 
+    {
+        return dest;
+    }
+    unsigned char *d = (unsigned char *) dest;
+    unsigned char *s = (unsigned char *) src;
+    
+    if (d < s)
+    {
+        // Non-overlapping or dest comes before src. 
+        // Copy forward (left to right).
+        for (size_t i = 0; i < n; i++)
+        {
+            d[i] = s[i];
+        }
+    }
+    else
+    {
+        // Dest comes after src, meaning they might overlap.
+        // Copy backward (right to left) to preserve source data.
+        for (size_t i = n; i > 0; i--) {
+            d[i - 1] = s[i - 1];
+        }
+    }
+
+    return dest;
 }
 
 char *my_strchr(const char *s, int c)

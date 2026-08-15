@@ -6,11 +6,14 @@
 int main()
 {
     char greet[] = "Hello";
-    char *greet2 = (char *)my_memchr(greet, 'e', 5);
+    char greet2[3];
 
-    if (greet2 != NULL)
+    my_memmove(greet2, greet, 3);
+    
+    for (int i = 0; i < 3; i++)
     {
-        printf("%s", greet2);
+        printf("%c", greet2[i]);
     }
+
     return 0;
 }
