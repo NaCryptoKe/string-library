@@ -6,12 +6,11 @@
 int main()
 {
     char greet[] = "Hello";
-    char greet2[50];
+    char *greet2 = (char *)my_memchr(greet, 'e', 5);
 
-    int a = 20;
-    int b = 10;
-
-
-    printf("%d", my_memcmp(&b, &a, 2));
-
+    if (greet2 != NULL)
+    {
+        printf("%s", greet2);
+    }
+    return 0;
 }
