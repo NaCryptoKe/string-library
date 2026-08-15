@@ -19,24 +19,37 @@ int main()
     char    buf2[20];
     size_t  len;
 
-    if (sizeof(buf2) < strlen("Hello world!"))
+    if (sizeof(buf2) < my_strlen("Hello world!"))
         printf("strncpy: truncating character sequence");
 
-    strncpy(buf2, "Hello world!", sizeof(buf2));
+    my_strncpy(buf2, "Hello world!", sizeof(buf2));
     len = strnlen(buf2, sizeof(buf2));
 
     printf("[len = %zu]: ", len);
     fwrite(buf2, 1, len, stdout);
     putchar('\n');
 
-    if (sizeof(buf1) < strlen("Hello world!"))
+    if (sizeof(buf1) < my_strlen("Hello world!"))
         printf("stpncpy: truncating character sequence");
-    p = stpncpy(buf1, "Hello world!", sizeof(buf1));
+    p = my_stpncpy(buf1, "Hello world!", sizeof(buf1));
     len = p - buf1;
 
     printf("[len = %zu]: ", len);
     fwrite(buf1, 1, len, stdout);
     putchar('\n');
+
+    int numbers[5] = {10, 20, 30, 40, 50};
+
+    my_memset(numbers, 0, sizeof(numbers));
+
+    for(int i = 0; i < 5; i++) {
+        printf("%d ", numbers[i]); // Output: 0 0 0 0 0
+    }
+
+    char dest[20] = "Hello ";
+    char src[] = "World!";
+    my_strcat(dest, src);
+    printf("\n%s\n", dest); // Output: Hello World!
     
     return 0;
 }

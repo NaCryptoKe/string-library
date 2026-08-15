@@ -10,10 +10,10 @@
  * 2. memchr            [x]
  * 3. memcmp            [x]
  * 4. memmove           [x]
- * 5. memset
+ * 5. memset            [x]
  * 6. stpcpy            [x]
  * 7. stpncpy           [x]
- * 8. strcat
+ * 8. strcat            [x]
  * 9. strchr            [x]
  * 10. strcmp           [x]
  * 11. strcoll
@@ -45,10 +45,13 @@ void *my_memcpy(void *dest, const void *src, size_t n);
 void *my_memchr(const void *s, int c, size_t n);
 int my_memcmp(const void *s1, const void *s2, size_t n);
 void *my_memmove(void *dest, const void *src, size_t n);
+void *my_memset(void *s, int c, size_t n);
 char *my_stpcpy(char *dest, const char *src);
 char *my_stpncpy(char *dest, const char *src, size_t n);
+char *my_strcat(char *dest, const char *src);
 char *my_strchr(const char *s, int c);
 int my_strcmp(const char *s1, const char *s2);
+int my_strcoll (const char *s1, const char *s2);
 char *my_strcpy(char *dst, const char *src);
 size_t my_strlen(const char *str);
 char *my_strncpy(char *dest, const char *src, size_t n);
