@@ -42,16 +42,16 @@ int my_memcmp(const void *s1, const void *s2, size_t n)
 
 void *my_memmove(void *dest, const void *src, size_t n)
 {
-    if (dest == src || n == 0) 
+    if (dest == src || n == 0)
     {
         return dest;
     }
     unsigned char *d = (unsigned char *) dest;
     unsigned char *s = (unsigned char *) src;
-    
+
     if (d < s)
     {
-        // Non-overlapping or dest comes before src. 
+        // Non-overlapping or dest comes before src.
         // Copy forward (left to right).
         for (size_t i = 0; i < n; i++)
         {
@@ -143,7 +143,7 @@ int my_strcoll (const char *s1, const char *s2)
 
 char *my_strcpy(char *dest, const char *src)
 {
-    unsigned char *s = (unsigned char *) src; 
+    unsigned char *s = (unsigned char *) src;
 
     for(size_t i = 0; i < my_strlen(src); i++)
     {
@@ -151,6 +151,24 @@ char *my_strcpy(char *dest, const char *src)
     }
 
     return dest;
+}
+
+size_t my_strcspn(const char *s, const char *r)
+{
+    unsigned char* source = (unsigned char*) s;
+    unsigned char* reject = (unsigned char*) r;
+
+    size_t len = my_strlen(s);
+
+    for (size_t i = 0; i < len; i++)
+    {
+        for (size_t j = 0; j < my_strlen(r); j++)
+        {
+            if (source[i] == reject[j]) return i;
+        }
+    }
+
+    return len;
 }
 
 size_t my_strlen(const char *str)
@@ -163,8 +181,8 @@ size_t my_strlen(const char *str)
 
 char *my_strncpy(char *dest, const char *src, size_t n)
 {
-    unsigned char *d = (unsigned char *)dest; 
-    unsigned char *s = (unsigned char *)src; 
+    unsigned char *d = (unsigned char *)dest;
+    unsigned char *s = (unsigned char *)src;
     size_t len = my_strlen(src) >= n ? n : my_strlen(src);
 
     for (size_t i = 0; i < len; i++)

@@ -19,7 +19,7 @@
  * 11. strcoll
  * 12. strcoll_l
  * 13. strcpy           [x]
- * 14. strcspn
+ * 14. strcspn          [x]
  * 15. strdup
  * 16. strerror
  * 17. strerror_l
@@ -53,6 +53,7 @@ char *my_strchr(const char *s, int c);
 int my_strcmp(const char *s1, const char *s2);
 int my_strcoll (const char *s1, const char *s2);
 char *my_strcpy(char *dst, const char *src);
+size_t my_strcspn(const char *s, const char *r);
 size_t my_strlen(const char *str);
 char *my_strncpy(char *dest, const char *src, size_t n);
 
