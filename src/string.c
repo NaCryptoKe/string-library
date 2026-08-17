@@ -171,6 +171,16 @@ size_t my_strcspn(const char *s, const char *r)
     return len;
 }
 
+char *my_strdup(const char *s)
+{
+    size_t len = my_strlen(s);
+
+    char *result = (char *)malloc((len + 1) * sizeof(char));
+    my_strcpy(result, s);
+
+    return result;
+}
+
 size_t my_strlen(const char *str)
 {
     for (size_t i = 0; i >= 0; i++)

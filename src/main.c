@@ -7,14 +7,20 @@ int main()
 {
     int size;
 
-    char str1[] = "Nahom";
-    char str2[] = "eth";
+    char *str1 = "Nahom";
+    char *dup = my_strdup(str1);
 
-    size = my_strcspn(str1, str2);
-    printf("str1: %s\n", str1);
-    printf("str2: %s\n", str2);
-    printf("The number of characters in str1 before"
-         "\nfirst matched character from str2: %d\n", size);
+    if (dup == NULL) {
+        fprintf(stderr, "Memory allocation failed!\n");
+        return 1;
+    }
+    
+    // 3. Print and manipulate the duplicated string
+    printf("Original:  %s\n", str1);
+    printf("Duplicate: %s\n", dup);
+    
+    // 4. Free the allocated memory to avoid memory leaks
+    free(dup);
     
     return 0;
 }

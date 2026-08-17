@@ -3,6 +3,7 @@
 
 #include <stddef.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 /*
  * string.h (the original) has the following functions
@@ -20,7 +21,7 @@
  * 12. strcoll_l
  * 13. strcpy           [x]
  * 14. strcspn          [x]
- * 15. strdup
+ * 15. strdup           [x]
  * 16. strerror
  * 17. strerror_l
  * 18. strerror_r
@@ -54,6 +55,7 @@ int my_strcmp(const char *s1, const char *s2);
 int my_strcoll (const char *s1, const char *s2);
 char *my_strcpy(char *dst, const char *src);
 size_t my_strcspn(const char *s, const char *r);
+char *my_strdup(const char *s);
 size_t my_strlen(const char *str);
 char *my_strncpy(char *dest, const char *src, size_t n);
 
