@@ -241,3 +241,22 @@ char *my_strncpy(char *dest, const char *src, size_t n)
 
     return dest;
 }
+
+char *my_strndup(const char *s, size_t n)
+{
+    size_t len = my_strlen(s);
+
+    char *result = (char *)malloc((n + 1) * sizeof(char));
+    my_strncpy(result, s, n);
+    result[n] = '\0';
+
+    return result;
+}
+
+size_t my_strnlen(const char *s, size_t n)
+{
+    size_t len = my_strlen(s);
+
+    return len < n ? len : n;
+}
+

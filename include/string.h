@@ -23,23 +23,23 @@
  * 14. strcspn          [x]
  * 15. strdup           [x]
  * 16. strerror         [-]
- * 17. strerror_l
- * 18. strerror_r
+ * 17. strerror_l       [-]
+ * 18. strerror_r       [-]
  * 19. strlen           [x]
  * 20. strncat          [x]
  * 21. strncmp          [x]
  * 22. strncpy          [x]
- * 23. strndup
- * 24. strnlen
- * 25. strpbrk
- * 26. strrchr
- * 27. strsignal
- * 28. strspn
- * 29. strstr
- * 30. strtok
- * 31. strtok_r
- * 32. strxfrm
- * 33. strxfrm_l
+ * 23. strndup          [x]
+ * 24. strnlen          [x]
+ * 25. strpbrk          [-]
+ * 26. strrchr          [-]
+ * 27. strsignal        [-]
+ * 28. strspn           [-]
+ * 29. strstr           [-]
+ * 30. strtok           [-]
+ * 31. strtok_r         [-]
+ * 32. strxfrm          [-]
+ * 33. strxfrm_l        [-]
 */
 
 void *my_memcpy(void *dest, const void *src, size_t n);
@@ -61,5 +61,7 @@ size_t my_strlen(const char *str);
 char *my_strncat (char *dest, const char *src, size_t n);
 int my_strncmp(const char *s1, const char *s2, size_t n);
 char *my_strncpy(char *dest, const char *src, size_t n);
+char *my_strndup(const char *s, size_t n);
+size_t my_strnlen(const char *s, size_t n);
 
 #endif  // STRING_H
