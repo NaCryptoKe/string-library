@@ -27,7 +27,7 @@
  * 18. strerror_r
  * 19. strlen           [x]
  * 20. strncat          [x]
- * 21. strncmp
+ * 21. strncmp          [x]
  * 22. strncpy          [x]
  * 23. strndup
  * 24. strnlen
@@ -59,6 +59,7 @@ size_t my_strcspn(const char *s, const char *r);
 char *my_strdup(const char *s);
 size_t my_strlen(const char *str);
 char *my_strncat (char *dest, const char *src, size_t n);
+int my_strncmp(const char *s1, const char *s2, size_t n);
 char *my_strncpy(char *dest, const char *src, size_t n);
 
 #endif  // STRING_H

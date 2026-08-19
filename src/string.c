@@ -210,6 +210,19 @@ char *my_strncat (char *dest, const char *src, size_t n)
     return dest;
 }
 
+int my_strncmp(const char *s1, const char *s2, size_t n)
+{
+    unsigned char *src1 = (unsigned char *)s1;
+    unsigned char *src2 = (unsigned char *)s2;
+
+    for (size_t i = 0; i < n; i++)
+    {
+        if (src1[i] - src2[i] != 0) return src1[i] - src2[i];
+    }
+
+    return 0;
+}
+
 char *my_strncpy(char *dest, const char *src, size_t n)
 {
     unsigned char *d = (unsigned char *)dest;
