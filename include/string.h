@@ -2,8 +2,8 @@
 #define STRING_H
 
 #include <stddef.h>
-#include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
 
 /*
  * string.h (the original) has the following functions
@@ -17,16 +17,16 @@
  * 8. strcat            [x]
  * 9. strchr            [x]
  * 10. strcmp           [x]
- * 11. strcoll
- * 12. strcoll_l
+ * 11. strcoll          [-]
+ * 12. strcoll_l        [-]
  * 13. strcpy           [x]
  * 14. strcspn          [x]
  * 15. strdup           [x]
- * 16. strerror
+ * 16. strerror         [-]
  * 17. strerror_l
  * 18. strerror_r
  * 19. strlen           [x]
- * 20. strncat
+ * 20. strncat          [x]
  * 21. strncmp
  * 22. strncpy          [x]
  * 23. strndup
@@ -53,10 +53,12 @@ char *my_strcat(char *dest, const char *src);
 char *my_strchr(const char *s, int c);
 int my_strcmp(const char *s1, const char *s2);
 int my_strcoll (const char *s1, const char *s2);
+// int my_strcoll_l(const char *s1, const char *s2, locale_t locale);
 char *my_strcpy(char *dst, const char *src);
 size_t my_strcspn(const char *s, const char *r);
 char *my_strdup(const char *s);
 size_t my_strlen(const char *str);
+char *my_strncat (char *dest, const char *src, size_t n);
 char *my_strncpy(char *dest, const char *src, size_t n);
 
 #endif  // STRING_H

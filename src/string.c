@@ -141,6 +141,11 @@ int my_strcoll (const char *s1, const char *s2)
     // tbd
 }
 
+// int my_strcoll_l(const char *s1, const char *s2, locale_t locale)
+// {
+//     // tbd
+// }
+
 char *my_strcpy(char *dest, const char *src)
 {
     unsigned char *s = (unsigned char *) src;
@@ -187,6 +192,22 @@ size_t my_strlen(const char *str)
     {
         if (str[i] == '\0') return i;
     }
+}
+
+char *my_strncat (char *dest, const char *src, size_t n)
+{
+    unsigned char *d = (unsigned char *) dest;
+    unsigned char *s = (unsigned char *) src;
+
+    size_t d_len = my_strlen(dest);
+    n += d_len;
+
+    for (d_len, size_t i = 0; d_len < n; d_len++, i++)
+    {
+        d[d_len] = s[i];
+    }
+
+    return dest;
 }
 
 char *my_strncpy(char *dest, const char *src, size_t n)
