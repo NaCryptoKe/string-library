@@ -53,7 +53,7 @@ char *my_strcat(char *dest, const char *src);
 char *my_strchr(const char *s, int c);
 int my_strcmp(const char *s1, const char *s2);
 int my_strcoll (const char *s1, const char *s2);
-// int my_strcoll_l(const char *s1, const char *s2, locale_t locale);
+int my_strcoll_l(const char *s1, const char *s2);
 char *my_strcpy(char *dst, const char *src);
 size_t my_strcspn(const char *s, const char *r);
 char *my_strdup(const char *s);

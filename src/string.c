@@ -138,13 +138,11 @@ int my_strcmp(const char *s1, const char *s2)
 
 int my_strcoll (const char *s1, const char *s2)
 {
-    // tbd
-}
+    // Locale-aware collation isn't implemented; fall back to a plain
+    // byte-wise comparison (equivalent to the "C" locale).
+    return my_strcmp(s1, s2);
 
-// int my_strcoll_l(const char *s1, const char *s2, locale_t locale)
-// {
-//     // tbd
-// }
+}
 
 char *my_strcpy(char *dest, const char *src)
 {
