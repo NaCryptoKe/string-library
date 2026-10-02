@@ -1,6 +1,11 @@
 #ifndef MY_STRING_H
 #define MY_STRING_H
 
+/* Needed so <locale.h> exposes locale_t (POSIX.1-2008 / GNU extension). */
+#ifndef _GNU_SOURCE
+#define _GNU_SOURCE
+#endif
+
 #include <stddef.h>
 #include <stdlib.h>
 #include <locale.h>
@@ -53,7 +58,9 @@ char *my_strcat(char *dest, const char *src);
 char *my_strchr(const char *s, int c);
 int my_strcmp(const char *s1, const char *s2);
 int my_strcoll (const char *s1, const char *s2);
-int my_strcoll_l(const char *s1, const char *s2);
+/* TODO: not implemented yet - needs a locale_t parameter to match glibc's
+ * strcoll_l(const char *, const char *, locale_t). */
+int my_strcoll_l(const char *s1, const char *s2, locale_t locale);
 char *my_strcpy(char *dst, const char *src);
 size_t my_strcspn(const char *s, const char *r);
 char *my_strdup(const char *s);
