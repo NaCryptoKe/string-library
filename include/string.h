@@ -1,5 +1,5 @@
-#ifndef STRING_H
-#define STRING_H
+#ifndef MY_STRING_H
+#define MY_STRING_H
 
 #include <stddef.h>
 #include <stdlib.h>
@@ -64,4 +64,4 @@ char *my_strncpy(char *dest, const char *src, size_t n);
 char *my_strndup(const char *s, size_t n);
 size_t my_strnlen(const char *s, size_t n);
 
-#endif  // STRING_H
+#endif  // MY_STRING_H
