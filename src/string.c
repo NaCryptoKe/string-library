@@ -1,5 +1,6 @@
 #include "../include/string.h"
 #include <stdlib.h>
+#include <stdint.h>
 
 void *my_memcpy(void *dest, const void *src, size_t n)
 {
@@ -47,7 +48,9 @@ void *my_memmove(void *dest, const void *src, size_t n)
     unsigned char *d = (unsigned char *) dest;
     const unsigned char *s = (const unsigned char *) src;
 
-    if (d < s)
+    // Compare as integers: relational comparison of pointers into
+    // different objects is undefined behaviour in strict ISO C.
+    if ((uintptr_t) d < (uintptr_t) s)
     {
         // Non-overlapping or dest comes before src.
         // Copy forward (left to right).
