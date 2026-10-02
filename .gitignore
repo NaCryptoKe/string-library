@@ -1,0 +1,24 @@
+# Build artifacts
+main
+*.o
+*.obj
+*.a
+*.so
+*.out
+*.exe
+
+# Build directories
+build/
+dist/
+
+# Debug / sanitizer output
+*.dSYM/
+*.gcda
+*.gcno
+*.gcov
+
+# Editor / OS noise
+.vscode/
+.idea/
+*.swp
+.DS_Store
